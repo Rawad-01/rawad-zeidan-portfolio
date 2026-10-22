@@ -18,7 +18,7 @@ Source for Rawad Zeidan’s Systems × Stories portfolio. The website has not be
 
 ## Run
 
-Use Node.js 20.9 or later. The reviewed environment uses Node 24.14.0 and npm 11.9.0.
+Use Node.js 24.x. The reviewed environment uses Node 24.14.0 and npm 11.9.0.
 
 ```sh
 npm ci --ignore-scripts
@@ -76,11 +76,15 @@ In a second terminal, run `npm run test:browser`. The script uses installed Chro
 
 The checks cover three routes, real image decoding, responsive overflow, keyboard state, reduced-motion transitions, media requests, local navigation, console errors and axe accessibility rules. The media mode also checks decoding, playback, Escape and restored focus. See [verification scope](docs/verification.md) for actual results and what has not been tested. Automated checks do not establish full accessibility compliance or real-world performance.
 
+## Deploy on Vercel
+
+See [Vercel deployment](docs/vercel.md) for project settings, production metadata and film delivery. The repository supplies `vercel.json` and pins Node 24.x. Deployment uses your own Vercel account.
+
 ## Content and publication configuration
 
 - The only confirmed profile URL is `https://github.com/Rawad-01`.
 - Engineering source links use the verified public repository URLs in `src/data/repositories.ts`. Future projects should keep `status: "proposed"` until their repositories are created and checked.
-- Set `NEXT_PUBLIC_SITE_URL` to the confirmed HTTPS origin before a public build. With no origin, the site remains noindex, robots disallows indexing and the sitemap is empty.
+- Vercel production metadata uses its assigned production domain automatically. `NEXT_PUBLIC_SITE_URL` can override it with a confirmed custom HTTPS origin. Preview/development deployments remain noindex. Local builds without an origin remain noindex with an empty sitemap.
 - Contact is a `mailto:` link. No email-delivery backend, analytics, database or account service is required.
 - Build again after changing media or domain configuration. Static output captures configuration at build time.
 - `out/` is the deployable artifact. Review hosting configuration separately; this source contains no automatic deployment workflow.

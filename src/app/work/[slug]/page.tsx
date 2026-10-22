@@ -1,4 +1,5 @@
 import { repositories } from "@/data/repositories";
+import { getSiteConfiguration } from "@/lib/site-config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { projects } from "@/data/content";
@@ -17,22 +18,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const p = projects.find((p) => p.slug === slug);
+  const { siteUrl } = getSiteConfiguration();
   return {
     title: p?.title,
     description: p?.description,
-    ...(process.env.NEXT_PUBLIC_SITE_URL
+    ...(siteUrl
       ? {
           alternates: {
-            canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/work/${slug}/`,
+            canonical: `${siteUrl}/work/${slug}/`,
           },
           openGraph: {
             title: p?.title,
             description: p?.description,
-            url: `${process.env.NEXT_PUBLIC_SITE_URL}/work/${slug}/`,
+            url: `${siteUrl}/work/${slug}/`,
             type: "article",
             images: [
               {
-                url: `${process.env.NEXT_PUBLIC_SITE_URL}/social-card.png`,
+                url: `${siteUrl}/social-card.png`,
                 width: 1200,
                 height: 630,
                 alt: "Rawad Zeidan - Systems x Stories",

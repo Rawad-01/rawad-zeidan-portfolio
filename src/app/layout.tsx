@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { getSiteConfiguration } from "@/lib/site-config";
 import "@fontsource-variable/manrope";
 import "@fontsource/instrument-serif/latin-400-italic.css";
 import "./globals.css";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const { siteUrl, isIndexable } = getSiteConfiguration();
 export const metadata: Metadata = {
   title: {
     default: "Rawad Zeidan — Systems × Stories",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     title: "Rawad Zeidan — Systems × Stories",
     description: "Software Developer & Creative Technologist",
   },
-  robots: { index: Boolean(siteUrl), follow: Boolean(siteUrl) },
+  robots: { index: isIndexable, follow: isIndexable },
   icons: { icon: "/icon.svg" },
   ...(siteUrl ? { alternates: { canonical: siteUrl } } : {}),
 };
