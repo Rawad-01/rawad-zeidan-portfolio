@@ -78,7 +78,7 @@ The checks cover three routes, real image decoding, responsive overflow, keyboar
 
 ## Deploy on Vercel
 
-See [Vercel deployment](docs/vercel.md) for project settings, production metadata and film delivery. The repository supplies `vercel.json` and pins Node 24.x. Deployment uses your own Vercel account.
+See [Vercel deployment](docs/vercel.md) for project settings, production metadata and film delivery. Leave the Vercel Output Directory override disabled; Next.js detects its static export automatically. The repository supplies `vercel.json` and pins Node 24.x. Deployment uses your own Vercel account.
 
 ## Content and publication configuration
 

@@ -1,15 +1,21 @@
 # Vercel deployment
 
-Configured for Next.js static export, Node 24.x, `npm ci --ignore-scripts`, `npm run build`, and output directory `out`. The repository root is the project root. `vercel.json` supplies the build settings and basic response headers. No database, email service or application secret is needed.
+Configured for Next.js static export, Node 24.x, `npm ci --ignore-scripts`, `npm run build`, and automatic Next.js output detection. Leave the Vercel Output Directory override disabled; do not enter `out`. The repository root is the project root. `vercel.json` supplies the build settings and basic response headers. No database, email service or application secret is needed.
 
 ## Connect and deploy
 
 1. Sign in to your Vercel account and import `Rawad-01/rawad-zeidan-portfolio` from GitHub. Grant the Vercel GitHub integration access to this repository if requested.
-2. Use the Next.js framework preset, repository root and `main` as the production branch. Retain the checked-in build/install/output settings and Node 24.x.
+2. Use the Next.js framework preset, repository root and `main` as the production branch. Retain the checked-in build/install settings and Node 24.x. In Settings > Build and Deployment > Build & Development Settings, turn off the Output Directory override and save. Keep the framework preset as Next.js.
 3. Start deployment. Vercel supplies the real production domain; no domain is guessed in this source.
 4. Check the returned production URL, both case studies, posters, GitHub/email actions, robots, sitemap and social image. A prepared repository does not imply a deployed site.
 
 Git integration enables future deployments from the repository. For CLI deployment, link the intended account/project first and connect the Git repository deliberately. Local `.vercel/` linkage is ignored by Git.
+
+## Recover from NEXT_NO_ROUTES_MANIFEST
+
+If the build succeeds but Vercel cannot find `out/routes-manifest.json`, use the latest `main` commit with no `outputDirectory` property in `vercel.json`. Disable the dashboard Output Directory override, save, and deploy that latest commit. Do not redeploy the older configuration commit `a394541`, change `distDir`, or copy manifest files into `out`.
+
+Vercel documents this exact static-export configuration in its [routes manifest troubleshooting guide](https://github.com/vercel/vercel/blob/main/errors/now-next-routes-manifest.md).
 
 ## Production metadata and previews
 
@@ -29,6 +35,6 @@ See [media instructions](media.md) for titles, captions/transcripts and audio de
 
 ## File boundaries
 
-`.vercelignore` excludes local environments, generated output, reports, tools, credentials and large media from CLI uploads. Deploy from the clean portfolio repository, never the parent university workspace. Only `out/` is served as website content. Originals remain untouched.
+`.vercelignore` excludes local environments, generated output, reports, tools, credentials and large media from CLI uploads. Deploy from the clean portfolio repository, never the parent university workspace. For ordinary static hosting, publish only the generated `out/` artifact. On Vercel, let its Next.js integration read build manifests from `.next/` and detect the static export; never configure `out` as the Vercel Output Directory. Originals remain untouched.
 
 Official references: [Git deployments](https://vercel.com/docs/deployments/git), [configuration](https://vercel.com/docs/project-configuration/vercel-json), [system variables](https://vercel.com/docs/environment-variables/system-environment-variables), [Node versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
