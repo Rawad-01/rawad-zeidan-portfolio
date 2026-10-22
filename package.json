@@ -1,0 +1,31 @@
+{
+  "name": "rawad-zeidan-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "preview": "node scripts/preview.mjs",
+    "test:browser": "node scripts/qa.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@fontsource-variable/manrope": "^5.2.0",
+    "@fontsource/instrument-serif": "^5.2.0",
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

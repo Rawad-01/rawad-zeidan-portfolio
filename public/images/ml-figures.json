@@ -1,0 +1,61 @@
+{
+  "sourceNotebook": "final ml project/Student_Performance_Unsupervised_ML_Project_Executed.ipynb",
+  "sourceSha256": "4af0101d655a76458581232c18b6f813d59d21e2130211907f3e8e00a7bb3738",
+  "provenance": "Extracted from existing saved notebook outputs without executing notebook code. Cell and output indices are zero-based.",
+  "figures": [
+    {
+      "file": "ml-elbow.png",
+      "cellIndex": 14,
+      "outputIndex": 0,
+      "width": 635,
+      "height": 393,
+      "alt": "K-Means inertia across candidate cluster counts",
+      "sha256": "464a2031648a6ec855b38e46c59c540dfca25242d79a0531195b7bc2238491bd"
+    },
+    {
+      "file": "ml-silhouette.png",
+      "cellIndex": 14,
+      "outputIndex": 1,
+      "width": 622,
+      "height": 393,
+      "alt": "K-Means silhouette scores across candidate cluster counts",
+      "sha256": "afcfb8c162369ca8d4d829f7d572d17734d0282a8f83a8ae248638ea569f9ea5"
+    },
+    {
+      "file": "ml-dendrogram.png",
+      "cellIndex": 18,
+      "outputIndex": 0,
+      "width": 841,
+      "height": 446,
+      "alt": "Ward-linkage dendrogram for the 80-student sample",
+      "sha256": "daf4f3ec288e1caaadc7fd0abf50b72e3787090ba214638e6e21b3499b00ed67"
+    },
+    {
+      "file": "ml-pca-variance.png",
+      "cellIndex": 20,
+      "outputIndex": 1,
+      "width": 613,
+      "height": 393,
+      "alt": "Cumulative variance retained by PCA components",
+      "sha256": "1e10006cf576644eefcf1c2df945ee9b0d834ba87b2b1d79b5dd9bf8a9a47c58"
+    },
+    {
+      "file": "ml-kmeans-pca.png",
+      "cellIndex": 21,
+      "outputIndex": 1,
+      "width": 612,
+      "height": 470,
+      "alt": "Saved K-Means cluster assignments projected into two principal components",
+      "sha256": "a9fe293070a6882a83b4c301b34af872894cfcc442f76853e00b6f8a45db8246"
+    },
+    {
+      "file": "ml-hierarchical-pca.png",
+      "cellIndex": 21,
+      "outputIndex": 2,
+      "width": 612,
+      "height": 470,
+      "alt": "Saved hierarchical cluster assignments projected into two principal components",
+      "sha256": "2ff9bae9860f20a8b96b11e39940149d21a0a8f69ae7051e44cba37150af98a4"
+    }
+  ]
+}

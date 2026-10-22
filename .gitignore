@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+*.log
+qa-results/
+.npm-cache/
+public/media/*.mp4
+public/media/*.webm
+.DS_Store
+Thumbs.db

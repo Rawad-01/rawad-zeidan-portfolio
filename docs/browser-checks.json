@@ -1,0 +1,67 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/work/point-of-sale/",
+      "status": 200
+    },
+    {
+      "route": "/work/student-performance/",
+      "status": 200
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440
+    },
+    {
+      "width": 1024,
+      "viewport": 1024,
+      "document": 1024
+    },
+    {
+      "width": 768,
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "width": 320,
+      "viewport": 320,
+      "document": 320
+    }
+  ],
+  "accessibility": [
+    {
+      "route": "/",
+      "violations": []
+    },
+    {
+      "route": "/work/point-of-sale/",
+      "violations": []
+    },
+    {
+      "route": "/work/student-performance/",
+      "violations": []
+    }
+  ],
+  "consoleErrors": [],
+  "checks": [
+    "Signature responds to keyboard and pointer.",
+    "Reduced motion disables animation.",
+    "Mobile navigation opens, follows anchors, and closes.",
+    "No player or MP4/WebM network request before film activation.",
+    "Source-only build offers email viewing requests instead of broken players.",
+    "Local targets exist. Case-study source links match the verified public repositories.",
+    "No corrupted display punctuation."
+  ]
+}
